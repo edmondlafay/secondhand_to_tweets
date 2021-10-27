@@ -1,8 +1,8 @@
 import scrapy
 import json
 
-class QuotesSpider(scrapy.Spider):
-  name = "quotes"
+class OfferSpider(scrapy.Spider):
+  name = "offers"
   start_urls = [
       'https://www.leboncoin.fr/recherche?category=2&regdate=min-1989&mileage=min-175000&price=100-9000',
   ]
@@ -20,6 +20,6 @@ class QuotesSpider(scrapy.Spider):
         'imgs': ad['images']['urls_thumb'][0:3],
       }
 
-    next_page = response.xpath('//a[@title="Page suivante"]/@href').get()
-    if next_page is not None:
-        yield response.follow(next_page, callback=self.parse)
+    # next_page = response.xpath('//a[@title="Page suivante"]/@href').get()
+    # if next_page is not None:
+    #     yield response.follow(next_page, callback=self.parse)

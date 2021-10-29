@@ -78,6 +78,8 @@ class SecondhandToTweetsDownloaderMiddleware:
         # - or return a Request object
         # - or raise IgnoreRequest: process_exception() methods of
         #   installed downloader middleware will be called
+        
+        spider.logger.info('request headers: %s' % request.headers)
         return None
 
     def process_response(self, request, response, spider):

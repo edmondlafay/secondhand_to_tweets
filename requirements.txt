@@ -1,0 +1,4 @@
+scrapy
+requests
+requests_oauthlib
+pyyaml
